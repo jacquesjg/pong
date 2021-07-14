@@ -16,6 +16,45 @@ const computerPaddle = document.querySelector('.computer-paddle');
 let computerPaddleYPosition = 0;
 let computerPaddleYVelocity = 1;
 
+
+// The position and velocity of the computer ball
+let ballYPosition = 0;
+let ballYVelocity = 1;
+let ballXPosition = 0;
+let ballXVelocity = 1;
+
+
+// testing of the rectangle
+const gameArea = document.querySelector('.game-area');
+gameArea.style.backgroundColor = "white";
+
+
+// get ball element
+const ball = document.querySelector('.ball')
+
+// the y-velocity of the ball
+
+// the x-velocity of the ball
+
+
+
+
+// update ball position
+function ballmove() {
+    ballYPosition = ballYPosition + ballYVelocity;
+
+
+    if (ballYPosition < (GAME_AREA_HEIGHT - 20) && ballYPosition > 0) {
+
+        // Apply the y-position 
+        ball.style.top = ballYPosition + 'px';
+    }
+    else { ballYVelocity = ballYVelocity * -1 }
+
+}
+// Call the update() function every 35ms
+setInterval(ballmove, 35);
+
 // Update the pong world
 function update() {
 
