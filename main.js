@@ -42,14 +42,24 @@ const ball = document.querySelector('.ball')
 // update ball position
 function ballmove() {
     ballYPosition = ballYPosition + ballYVelocity;
-
+    ballXPosition = ballXPosition + ballXVelocity;
 
     if (ballYPosition < (GAME_AREA_HEIGHT - 20) && ballYPosition > 0) {
-
         // Apply the y-position 
         ball.style.top = ballYPosition + 'px';
     }
-    else { ballYVelocity = ballYVelocity * -1 }
+    else {
+        ballYVelocity = ballYVelocity * -1
+    }
+
+    if (ballXPosition < (GAME_AREA_WIDTH - 20) && ballXPosition > 0) {
+        // Apply the y-position 
+        ball.style.left = ballXPosition + 'px';
+    }
+    else {
+        ballXVelocity = ballXVelocity * -1
+    }
+
 
 }
 // Call the update() function every 35ms
